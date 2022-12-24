@@ -38,7 +38,7 @@ export const Card = ({anuncio, departamento, departamentos}: PropsCard) =>
           <BiLinkAlt className={styles.icono} />
           <div className={styles.informacion}>
             <span className={styles.titulo}>Enlace original: </span>
-            <span className={styles.subtitulo}><a href={anuncio.enlace}>Ver página</a></span>
+            <span className={styles.subtitulo}><a href={anuncio.enlace} target="_blank">Ver página</a></span>
           </div>
         </div>
 
