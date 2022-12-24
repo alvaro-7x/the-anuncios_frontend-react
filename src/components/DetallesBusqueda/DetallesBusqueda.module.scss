@@ -1,0 +1,95 @@
+@import '../colors';
+
+.containerResultados
+{
+  background-color: lighten($color5, 7%);
+  width: 100%;
+  height: 100%;
+
+  min-width:350px;
+  min-height:180px;
+
+  max-width:350px;
+  max-height:180px;
+
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.1411764706), 0 1px 3px rgba(0, 0, 0, 0.1215686275);
+  position: absolute;
+  top: 64px;
+  right: 0;
+  margin: 14px;
+  border-radius: 4px;
+  padding: 16px;
+  overflow: hidden;
+  z-index: -9;
+  transition: 0.3s;
+
+  .detalles
+  {
+    position: relative;
+
+    .cerrar
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+
+      *
+      {
+        font-size: 20px;
+      }
+
+      &:hover
+      {
+        transform: scale(1.2);
+      }
+    }
+
+    .titulo
+    {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .cantidad
+    {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 25px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .terminosBusqueda
+    {
+      overflow: hidden;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+    }
+
+    .label
+    {
+      font-size: 16;
+      display: inline-block;
+      margin-bottom: 12px;
+      font-weight: 700;
+      padding-right: 7px;
+    }
+
+    .texto
+    {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.containerResultadosVisible
+{
+  z-index: 9 !important;
+}

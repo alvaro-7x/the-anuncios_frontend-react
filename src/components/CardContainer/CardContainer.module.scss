@@ -1,0 +1,45 @@
+@import '../colors';
+
+.container
+{
+  margin-top: 64px;
+  overflow-y: auto;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: $color5;
+  padding: 25px;
+}
+
+.cardContainer
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%,280px), 300px));
+  gap: 20px;
+  justify-content: center;
+}
+
+.sinAnuncios,
+.sinMasResultados
+{
+  width: 100%;
+  padding: 5px;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: block;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.masResultados
+{
+  margin-top: 25px;
+  opacity: 1;
+  transition: 0s;
+}
+
+.masResultadosVisible
+{
+  opacity: 1 !important;
+}

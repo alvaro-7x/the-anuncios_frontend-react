@@ -1,0 +1,32 @@
+:root
+{
+  --color1: #012E4A;
+  --color2: #036280;
+  --color3: #378BA4;
+  --color4: #81BECE;
+  --color5: #E8EDE7;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu' , sans-serif;
+  outline: none !important;
+  scrollbar-color: rgba(0,0,0,0.5) var(--color5);
+  scrollbar-width: thin;
+}
+
+button:focus,
+input:focus
+{
+  outline: none;
+  box-shadow: none;
+}
+
+button::-moz-focus-inner,
+input:focus
+{
+  border: 0;
+}

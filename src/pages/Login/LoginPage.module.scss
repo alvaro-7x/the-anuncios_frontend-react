@@ -1,0 +1,309 @@
+$color1: #012E4A;
+$color2: #036280;
+$color3: #378BA4;
+$color4: #81BECE;
+$color5: #E8EDE7;
+
+@mixin login-google()
+{
+  /*background: $color2;*/
+  background: radial-gradient(white -20%, $color2 80%) !important;
+  height: 100%;
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10 !important;
+  box-shadow: inset 0px 0px 10px rgba(255,255,255,0.5) !important;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  transition: 0.1s;
+
+  .btn_login
+  {
+    visibility: visible;
+  }
+}
+
+@mixin login-captcha()
+{
+  /*background: $color4;*/
+  background: radial-gradient(white, $color4 80%) !important;
+  height:100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  z-index: 10 !important;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.1) !important;
+  transition: 0.1s;
+
+  .btn_login
+  {
+    visibility: visible;
+  }
+}
+
+@mixin mostrar-opcion-login($animacion, $color, $posX, $posY)
+{
+  animation: $animacion 2s linear infinite;
+  background: $color !important;
+  border-radius: 50% !important;
+  color: transparent !important;
+  cursor: pointer !important;
+  filter: blur(2px);
+  height: 200px !important;
+  transform: translate($posX, $posY);
+  width: 200px !important;
+  z-index: 20 !important;
+}
+
+.container
+{
+  align-items: center;
+  /*background-color: $color5;*/
+  background: linear-gradient(-45deg , $color5, white);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow-x: hidden;
+  padding: 10vh;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  &::before
+  {
+    content: "before";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../../assets/lock.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .detalles
+  {
+    min-width: 600px;
+    overflow: hidden;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .login
+  {
+    position: relative;
+    background-color: white;
+    min-width: 600px;
+    min-height: 380px;
+    overflow: hidden;
+    color: #333;
+    width: 100%;
+    height: 100%;
+
+    .contenedorPregunta
+    {
+      position: relative;
+      top: calc(50% - 150px);
+      left: calc(50% - 150px);
+      width: 300px;
+      height: 300px;
+      z-index: 2;
+      display: table;
+
+      .pregunta
+      {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 450;
+      }
+
+      .imgLock
+      {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets/lock.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        opacity: 0.1;
+        animation: candado 2s linear infinite;
+      }
+    }
+
+    .google,
+    .captcha
+    {
+      padding: 20px;
+    }
+
+    .google
+    {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+
+      left: 0;
+      background: linear-gradient(to right, $color2 , white);
+      z-index: 1;
+      transition: 0.2s;
+  
+      color: $color5;
+      box-shadow: 0px 0px 0px transparent;
+      border-radius: 0;
+
+      &:hover
+      {
+        @include login-google;
+      }
+    }
+
+    .captcha
+    {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+
+      right: 0;
+      background: linear-gradient(to left, $color4 , white);
+      z-index: 1;
+      transition: 0.2s;
+
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      flex-direction: column-reverse;
+      border-radius: 0;
+
+      &:hover
+      {
+        @include login-captcha;
+      }
+    }
+
+    h2
+    {
+      font-size: 30px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    label
+    {
+      width: 65%;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.click_google
+{
+  @include login-google;
+}
+
+.click_captcha
+{
+  @include login-captcha;
+}
+
+.btn_login
+{
+  width: 100%;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.mostrar_google
+{
+  @include mostrar-opcion-login(btnGoogle, $color2, -40%, -40%);
+}
+
+.mostrar_captcha
+{
+  @include mostrar-opcion-login(btnCaptcha, $color4, 40%, 40%);
+
+  bottom: 0 !important;
+  right: 0;
+}
+
+@keyframes candado
+{
+  0%,100%
+  {
+    transform:  scale(0.8);
+  }
+
+  50%
+  {
+    transform: scale(1);
+  }
+}
+
+@keyframes btnGoogle
+{
+  0%,100%
+  {
+    transform: translate(-40%, -40%) scale(1);
+  }
+
+  50%
+  {
+    transform: translate(-40%, -40%) scale(0.7);
+  }
+}
+@keyframes btnCaptcha
+{
+  0%,100%
+  {
+    transform: translate(40%, 40%) scale(1);
+  }
+
+  50%
+  {
+    transform: translate(40%, 40%) scale(0.7);
+  }
+}
+
+@media (max-width: 550px)
+{
+  .container
+  {
+    .login
+    {
+      .google
+      {
+        padding: 40px;
+        text-align: right;
+      }
+
+      .captcha
+      {
+        h2
+        {
+          margin-bottom: 0;
+        }
+
+        padding: 40px;
+        align-items: start;
+      }
+    }
+  }
+}

@@ -1,0 +1,244 @@
+@import '../colors';
+
+.card
+{
+  min-width: 280px;
+  width: 300px;
+  border-radius: 7px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 2px 1px -1px #0003,0 1px 1px #00000024,0 1px 3px #0000001f;
+  background-color: rgba(255, 255,255,0.5);
+  transition: 0.5s ease-in-out;
+  z-index:1;
+  overflow: hidden;
+
+  &::before
+  {
+    content: '';
+    position: absolute;
+
+    background: linear-gradient(to left, $color3 10%, transparent 70%);
+    clip-path: circle(60% at 120% 50%);
+
+    /*clip-path: polygon(100% 0, 57% 79%, 100% 100%);*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    border-radius: 7px;
+    opacity: 0.15;
+    filters: blur(10px);
+  }
+
+  .estado
+  {
+    
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3px;
+    background-color: $color4;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+
+  .header
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .detalles
+    {
+      display: block;
+      width: calc(100% - 118px);
+      transition: 0.4s width ease-in-out;
+      cursor: col-resize;
+
+      .puesto
+      {
+        text-transform: uppercase;
+        display: block;
+        font-weight: 500;
+        font-size: 24px;
+        letter-spacing: 0px;
+        margin-bottom: 5px;
+        color: rgba(0,0,0,0.9);
+        line-height: 20px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 80px;
+        width: 100%;
+      }
+
+      .empresa
+      {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 2px;
+        color: rgba(0,0,0,0.7);
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .ciudad
+      {
+        display: block;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: rgba(0,0,0,0.5);
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &:hover,
+      &:active
+      {
+        background: rgba(255, 255, 255, 0.7);
+        left: 0;
+        padding: 10px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        /*height: 100vh;*/
+        padding-top: 12px;
+        z-index: 1;
+
+        .empresa,
+        .ciudad
+        {
+          white-space: normal;
+        }
+      }
+    }
+
+    .imgEmpresa
+    {
+      max-width: 118px;
+      max-height: 118px;
+      height: auto;
+      min-width: 118px;
+      min-height: 118px;
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: inset 0px 0px 14px 5px rgb(232, 237, 231), 1px 2px 5px #03628085;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      img
+      {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .body
+  {
+    margin: 16px 0;
+    position: relative;
+
+    .datos
+    {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      padding: 0 16px;
+      height: 70px;
+
+      .icono
+      {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+      }
+
+      .informacion
+      {
+        display: flex;
+        margin-left: 16px;
+        flex-wrap: wrap;
+        width: 100%;
+        
+        .titulo
+        {
+          display: block;
+          width: 100%;
+          font-size: 17px;
+        }
+
+        .subtitulo
+        {
+          display: block;
+          width: 100%;
+          font-weight: 700;
+          font-size: 15px;
+
+          a
+          {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    width: 100%;
+    text-align: right;
+    position: relative;
+
+    .btnFuente
+    {
+      display: inline-block;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 4px;
+      color: $color5;
+      background-color: $color2;
+      cursor: pointer !important;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.1411764706), 0 1px 5px rgba(0, 0, 0, 0.1215686275);
+      text-decoration: none;
+
+      box-shadow: 0 4px 0 darken($color2, 7%);
+      transition: 0.1s;
+
+      &:active
+      {
+        box-shadow: none;
+        transform: translateY(4px);
+      }
+    }
+
+    .sinFuente
+    {
+      display: inline-block;
+      height: 35px;
+    }
+  }
+
+  &:hover
+  {
+    transform: scale(1.05);
+  }
+}
