@@ -138,7 +138,3 @@ export const LoginPage = () =>
     </div>
   );
 };
-/*
-https://paletasdecolores.com/paleta-de-colores-4553/
-https://paletasdecolores.com/paleta-de-colores-4553/
-*/
