@@ -29,8 +29,8 @@ Ejecutar `npm run build` para construir el proyecto para produccion. El proyecto
 <img src="capturas/captura02.png" width="200px"><br>
 <img src="capturas/captura03.png" width="200px"><br>
 
-<img src="capturas/captura04.png" width="200px"><br>
-<img src="capturas/captura05.png" width="200px"><br>
+<img src="capturas/captura04.png" width="400px"><br>
+<img src="capturas/captura05.png" width="400px"><br>
 
 
 ## Información de referencia sobre Sign In With Google 
